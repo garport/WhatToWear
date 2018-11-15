@@ -1,0 +1,53 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory android:title="General">
+        <ListPreference
+            android:key="theme"
+            android:title="Theme"
+            android:entries="@array/theme_options"
+            android:summary="White"/>
+
+        <SwitchPreference
+            android:key="calendar_sync"
+            android:title="Connect with Google Calendar"/>
+
+        <SwitchPreference
+            android:key="get_notifications"
+            android:title="Receive notifications"/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title = "Notifications"
+        android:dependency="get_notifications">
+
+        <SwitchPreference
+            android:key="vibrate_notifications"
+            android:title="Vibrate"/>
+
+        <PreferenceCategory
+            android:title="Include notifications for">
+
+
+            <CheckBoxPreference
+                android:key="weather_notification"
+                android:title="Weather"
+                android:summary="Get notifications about the day's weather"/>
+
+            <CheckBoxPreference
+                android:key="event_notification"
+                android:title="Upcoming events"
+                android:summary="Get notifications about calendar events for the day"/>
+
+            <CheckBoxPreference
+                android:key="suggestion_notification"
+                android:title="Outfit previews"
+                android:summary="Get notifications about your suggested outfits"/>
+
+        </PreferenceCategory>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
