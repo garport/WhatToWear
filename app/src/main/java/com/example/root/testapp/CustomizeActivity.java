@@ -21,7 +21,7 @@ public class CustomizeActivity extends AppCompatActivity {
 
     }
 
-    public void wearItButtonPressed(View v){
+    public void wearItButtonPressed(View view){
         startActivity(new Intent(CustomizeActivity.this, MainActivity.class));
 
 
