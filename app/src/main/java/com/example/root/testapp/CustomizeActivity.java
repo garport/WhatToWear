@@ -5,8 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+
 public class CustomizeActivity extends AppCompatActivity {
-    static int top = 1;
+    static int top = 3;
     static int bottom = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

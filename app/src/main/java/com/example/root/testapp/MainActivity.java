@@ -75,6 +75,14 @@ public class MainActivity extends AppCompatActivity
 
             gallery.addView(view);
         }
+        final Button custom = findViewById(R.id.button_customize);
+        custom.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, CustomizeActivity.class));
+
+            }
+        });
 
         //inspired by https://stackoverflow.com/questions/4636141/determine-if-android-app-is-the-first-time-used
         final String PREFS_NAME = "MyPrefsFile";
