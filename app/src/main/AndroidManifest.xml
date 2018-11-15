@@ -100,5 +100,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.root.testapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".CustomizeActivity"
+            android:label="Customize"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.root.testapp.MainActivity" />
+        </activity>
     </application>
 </manifest>
