@@ -1,5 +1,6 @@
 package com.example.root.testapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,12 @@ public class CustomizeActivity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    public void wearItButtonPressed(View v){
+        startActivity(new Intent(CustomizeActivity.this, MainActivity.class));
 
 
     }
