@@ -10,10 +10,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="92dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/pants2" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/customTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +30,7 @@
 
     <Button
         android:id="@+id/prevtop"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -41,6 +42,7 @@
 
     <Button
         android:id="@+id/nextop"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -53,11 +55,12 @@
 
     <Button
         android:id="@+id/prevbottom"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="180dp"
         android:onClick="prevBottomButtonPressed"
         android:text="Previous"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,6 +68,7 @@
 
     <Button
         android:id="@+id/button4"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -76,6 +80,7 @@
 
     <Button
         android:id="@+id/customwearit"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -84,5 +89,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/customPants"
         app:layout_constraintStart_toEndOf="@+id/customPants" />
+
+    <Button
+        android:id="@+id/prevshoes"
+        style="@android:style/Widget.DeviceDefault.Light.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="prevShoesButtonPressed"
+        android:text="Previous"
+        app:layout_constraintStart_toStartOf="@+id/prevbottom"
+        app:layout_constraintTop_toTopOf="@+id/nextshoes" />
+
+    <Button
+        android:id="@+id/nextshoes"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:onClick="nextShoesButtonPressed"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button4" />
+
+    <ImageView
+        android:id="@+id/customShoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextshoes"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toEndOf="@+id/prevshoes"
+        app:srcCompat="@drawable/shoes2" />
 
 </android.support.constraint.ConstraintLayout>
