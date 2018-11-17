@@ -183,9 +183,17 @@ public class MainActivity extends AppCompatActivity
         final Dialog confirm = new Dialog(this);
         confirm.setContentView(R.layout.confirm);
         final Button wearIt = findViewById(R.id.button_wear);
+
         wearIt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                //add test outfit to wear
+                ClothingTopH top = new ClothingTopH("Green","Warm","Formal","Short-Sleeve",R.drawable.shirt1);
+                ClothingBottomH bottom = new ClothingBottomH("Navy","Cool","Informal","Pants",R.drawable.pants1);
+                ClothingShoesH shoes = new ClothingShoesH("Boots",R.drawable.shoes1);
+                Outfit exampleOutfit = new Outfit(top, bottom, shoes, "11/17/18", R.drawable.outfit1);
+                HistoryActivity.outfitHistory.add(0,exampleOutfit);
+
                 confirm.show();
             }
         });
