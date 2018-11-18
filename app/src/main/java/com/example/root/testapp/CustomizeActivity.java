@@ -26,7 +26,7 @@ public class CustomizeActivity extends AppCompatActivity {
         top++;
         switch (top){
             case -1:
-                top = 0;
+                top = 6;
                 break;
             case 0:
                 customTop.setImageResource(R.drawable.jacket2);
@@ -50,7 +50,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customTop.setImageResource(R.drawable.shirt3);
                 break;
             case 7:
-                top = 6;
+                top = 0;
                 break;
         }
     }
@@ -84,7 +84,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customTop.setImageResource(R.drawable.shirt3);
                 break;
             case 7:
-                top = 6;
+                top = 0;
                 break;
         }
     }
@@ -94,7 +94,7 @@ public class CustomizeActivity extends AppCompatActivity {
         bottom--;
         switch (bottom){
             case -1:
-                bottom = 0;
+                bottom = 1;
                 break;
             case 0:
                 customBottom.setImageResource(R.drawable.pants1);
@@ -104,7 +104,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 break;
 
             case 2:
-                bottom = 1;
+                bottom = 0;
                 break;
         }
     }
@@ -114,7 +114,7 @@ public class CustomizeActivity extends AppCompatActivity {
         bottom++;
         switch (bottom){
             case -1:
-                bottom = 0;
+                bottom = 1;
                 break;
             case 0:
                 customBottom.setImageResource(R.drawable.pants1);
@@ -123,7 +123,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customBottom.setImageResource(R.drawable.pants2);
                 break;
             case 2:
-                bottom = 1;
+                bottom = 0;
                 break;
         }
     }
@@ -132,7 +132,7 @@ public class CustomizeActivity extends AppCompatActivity {
         shoes++;
         switch(shoes){
             case -1:
-                shoes = 0;
+                shoes = 3;
                 break;
             case 0:
                 customShoes.setImageResource(R.drawable.shoes2);
@@ -147,7 +147,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customShoes.setImageResource(R.drawable.shoes4);
                 break;
             case 4:
-                shoes = 3;
+                shoes = 0;
                 break;
         }
     }
@@ -156,7 +156,7 @@ public class CustomizeActivity extends AppCompatActivity {
         shoes--;
         switch(shoes){
             case -1:
-                shoes = 0;
+                shoes = 3;
                 break;
             case 0:
                 customShoes.setImageResource(R.drawable.shoes2);
@@ -171,7 +171,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customShoes.setImageResource(R.drawable.shoes4);
                 break;
             case 4:
-                shoes = 3;
+                shoes = 0;
                 break;
         }
     }
