@@ -3,11 +3,7 @@
 
 
     <PreferenceCategory android:title="General">
-        <ListPreference
-            android:key="theme"
-            android:title="Theme"
-            android:entries="@array/theme_options"
-            android:summary="White"/>
+
 
         <SwitchPreference
             android:key="calendar_sync"

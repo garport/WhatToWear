@@ -59,12 +59,13 @@ public class MainActivity extends AppCompatActivity
 
         LayoutInflater galInflater = LayoutInflater.from(this);
 
+
         for(int i = 0; i < 1; i++ ){
 
             View view = galInflater.inflate(R.layout.item,gallery,false);
 
             ImageView imageview = view.findViewById(R.id.imageView3);
-            imageview.setImageResource(R.drawable.outfit1);
+            imageview.setImageResource(R.drawable.outfitcold);
 
             gallery.addView(view);
         }
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity
             View view = galInflater.inflate(R.layout.item,gallery,false);
 
             ImageView imageview = view.findViewById(R.id.imageView3);
-            imageview.setImageResource(R.drawable.outfitcold);
+            imageview.setImageResource(R.drawable.outfit1);
 
             gallery.addView(view);
         }
@@ -200,7 +201,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v){
                 ImageView imageview = findViewById(R.id.imageView3);
-                final String outfitimage = imageview.getTag().toString();
+                final String outfitimage = "outfitcold";
 
                 if (outfitimage == "outfit2") {
                     ClothingTopH top = new ClothingTopH("White","Cool","Informal","Short-Sleeve",R.drawable.shirt1);
