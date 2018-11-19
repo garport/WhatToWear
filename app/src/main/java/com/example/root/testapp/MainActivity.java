@@ -25,6 +25,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Dialog quizDialog;
@@ -193,15 +195,47 @@ public class MainActivity extends AppCompatActivity
         confirm.setContentView(R.layout.confirm);
         final Button wearIt = findViewById(R.id.button_wear);
 
+
         wearIt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //add test outfit to wear
-                ClothingTopH top = new ClothingTopH("Green","Warm","Formal","Short-Sleeve",R.drawable.shirt1);
-                ClothingBottomH bottom = new ClothingBottomH("Navy","Cool","Informal","Pants",R.drawable.pants1);
-                ClothingShoesH shoes = new ClothingShoesH("Boots",R.drawable.shoes1);
-                Outfit exampleOutfit = new Outfit(top, bottom, shoes, "11/17/18", R.drawable.outfit1);
-                HistoryActivity.outfitHistory.add(0,exampleOutfit);
+                ImageView imageview = findViewById(R.id.imageView3);
+                final String outfitimage = imageview.getTag().toString();
+
+                if (outfitimage == "outfit2") {
+                    ClothingTopH top = new ClothingTopH("White","Cool","Informal","Short-Sleeve",R.drawable.shirt1);
+                    ClothingBottomH bottom = new ClothingBottomH("Tan","Warm","Informal","Shorts",R.drawable.pants1);
+                    ClothingShoesH shoes = new ClothingShoesH("Boots",R.drawable.shoes1);
+                    ClosetItem hat = new ClosetItem("accessory","Baseball Hat","blue");
+                    ArrayList<ClosetItem> accessories = new ArrayList<>();
+                    accessories.add(hat);
+                    Outfit exampleOutfit = new Outfit(top, bottom, shoes, accessories,"11/19/18", R.drawable.outfit2);
+                    HistoryActivity.outfitHistory.add(0,exampleOutfit);
+                }
+                else if (outfitimage == "outfitcold") {
+                    ClothingTopH top = new ClothingTopH("Blue","Cold","Informal","Parka",R.drawable.jacket2);
+                    ClothingBottomH bottom = new ClothingBottomH("Tan","Cold", "Informal","Long Pants",R.drawable.pants1);
+                    ClothingShoesH shoes = new ClothingShoesH("Boots",R.drawable.shoes1);
+                    ClosetItem hat = new ClosetItem("accessory","Winter Hat","Red");
+                    ClosetItem scarf = new ClosetItem("accessory","Scarf","Gray");
+                    ClosetItem mittens = new ClosetItem("accessory","Mittens","Black");
+                    ArrayList<ClosetItem> accessories = new ArrayList<>();
+                    accessories.add(hat);
+                    accessories.add(scarf);
+                    accessories.add(mittens);
+                    Outfit exampleOutfit = new Outfit(top, bottom, shoes, accessories,"11/19/18", R.drawable.outfitcold);
+                    HistoryActivity.outfitHistory.add(0,exampleOutfit);
+                }
+                else { //outfitimage == outfit1
+                    ClothingTopH top = new ClothingTopH("White","Cool","Informal","Short-Sleeve",R.drawable.shirt1);
+                    ClothingBottomH bottom = new ClothingBottomH("Navy","Warm","Informal","Long Pants",R.drawable.pants1);
+                    ClothingShoesH shoes = new ClothingShoesH("Sneakers",R.drawable.shoes1);
+                    ClosetItem hat = new ClosetItem("accessory","Hat","brown");
+                    ArrayList<ClosetItem> accessories = new ArrayList<>();
+                    accessories.add(hat);
+                    Outfit exampleOutfit = new Outfit(top, bottom, shoes, accessories,"11/19/18", R.drawable.outfit1);
+                    HistoryActivity.outfitHistory.add(0,exampleOutfit);
+                }
 
                 confirm.show();
             }

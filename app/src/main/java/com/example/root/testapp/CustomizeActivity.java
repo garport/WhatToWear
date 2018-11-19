@@ -28,7 +28,6 @@ public class CustomizeActivity extends AppCompatActivity {
             case -1:
                 top = 6;
                 customTop.setImageResource(R.drawable.shirt2);
-
                 break;
             case 0:
                 customTop.setImageResource(R.drawable.jacket2);
