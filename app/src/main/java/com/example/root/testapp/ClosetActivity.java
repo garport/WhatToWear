@@ -40,6 +40,7 @@ public class ClosetActivity extends AppCompatActivity {
                 startActivity(new Intent(context, AddItem.class));
             }
         });
+        fab.setImageResource(R.drawable.ic_add_white_3x);
         Button filterButton = findViewById(R.id.filterButton);
         filterButton.setOnClickListener(new View.OnClickListener() {
             @Override

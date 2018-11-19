@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
         android:text="Name:"
+        app:layout_constraintBottom_toBottomOf="@+id/editText1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toTopOf="@+id/editText1" />
 
     <TextView
         android:id="@+id/yourage"
@@ -34,17 +34,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="52dp"
         android:text="Age:"
-        app:layout_constraintBottom_toTopOf="@+id/yourbio"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText2" />
 
     <TextView
         android:id="@+id/yourbio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginBottom="228dp"
         android:text="Bio:"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,37 +66,39 @@
         android:id="@+id/editText1"
         android:layout_width="263dp"
         android:layout_height="29dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="148dp"
         android:background="@null"
         android:ems="10"
         android:hint="Press edit to enter your name"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="263dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:background="@null"
         android:ems="10"
         android:hint="Press edit to enter your age"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText1"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
         app:layout_constraintTop_toBottomOf="@+id/editText1" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="219dp"
         android:layout_height="140dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
         android:background="@null"
         android:ems="10"
         android:hint="Press edit to enter your bio"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button

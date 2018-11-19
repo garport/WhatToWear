@@ -629,9 +629,9 @@
                     android:text="Short Pants" />
 
                 <RadioButton
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:text="Capri Pants" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capri Pants" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
