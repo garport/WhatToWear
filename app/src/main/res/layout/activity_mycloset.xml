@@ -13,15 +13,7 @@
 
 
     </android.support.design.widget.AppBarLayout>
-    <Spinner
-        android:layout_marginTop="32dp"
-        android:layout_marginLeft="32dp"
-        android:id="@+id/filter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
 
-    </Spinner>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -45,7 +37,24 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1.5">
+            <Spinner
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="32dp"
+                android:id="@+id/filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+            </Spinner>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:id = "@+id/filterButton"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="175dp">
+
+            </Button>
         </RelativeLayout>
 
         <GridLayout

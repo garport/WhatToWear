@@ -16,7 +16,15 @@ public class ProfileActivity extends AppCompatActivity {
         final EditText name = findViewById(R.id.editText1);
         final EditText age = findViewById(R.id.editText2);
         final EditText bio = findViewById(R.id.editText3);
-
+        if(ClosetList.getInstance().age != null){
+            age.setText(ClosetList.getInstance().age);
+        }
+        if(ClosetList.getInstance().profilename != null){
+            name.setText(ClosetList.getInstance().profilename);
+        }
+        if(ClosetList.getInstance().bio != null){
+            bio.setText(ClosetList.getInstance().bio);
+        }
         age.setInputType(0);
         name.setInputType(0);
         bio.setInputType(0);
@@ -35,6 +43,11 @@ public class ProfileActivity extends AppCompatActivity {
                     editButton.setText("Done");
                 }
                 else{
+                    ClosetList.getInstance().profilename = name.getText().toString();
+                    ClosetList.getInstance().age = age.getText().toString();
+
+                    ClosetList.getInstance().bio = bio.getText().toString();
+
 
                     age.setInputType(0);
                     name.setInputType(0);

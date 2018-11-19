@@ -10,7 +10,6 @@ import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -34,23 +33,6 @@ public class ClosetActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter0 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, filters);
         adapter0.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter0);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener () {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selected =  parentView.getItemAtPosition(position).toString();
-                updateCards(gridLayout, selected);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                updateCards(gridLayout, "All");
-            }
-
-        });
-
-
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +40,15 @@ public class ClosetActivity extends AppCompatActivity {
                 startActivity(new Intent(context, AddItem.class));
             }
         });
+        Button filterButton = findViewById(R.id.filterButton);
+        filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = spinner.getSelectedItem().toString();
+                updateCards(gridLayout, text);
+            }
+        });
+        updateCards(gridLayout, "All");
     }
 
     @Override
@@ -82,6 +73,7 @@ public class ClosetActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public void updateCards(final GridLayout gridLayout, String filter){
+        clearView();
         final String finalFilter = filter;
         final ArrayList<ClosetItem> displayItems;
         if(filter.equals("All")){
@@ -102,84 +94,115 @@ public class ClosetActivity extends AppCompatActivity {
         else{
             displayItems = ClosetList.getInstance().getAccessories();
         }
-        for(int i = 0; i<6; i++){
-            if(i < displayItems.size()){
-                final int finali = i;
-                final ClosetItem item = displayItems.get(i);
-                CardView cardView=(CardView)gridLayout.getChildAt(i);
-                ImageView cardImage;
-                if(i==0){
-                    cardImage = cardView.findViewById(R.id.cardView0);
-                }
-                else if(i==1){
-                    cardImage = cardView.findViewById(R.id.cardView1);
-                }
-                else if(i==2){
-                    cardImage = cardView.findViewById(R.id.cardView2);
-                }
-                else if(i==3){
-                    cardImage = cardView.findViewById(R.id.cardView3);
-                }
-                else if(i==4){
-                    cardImage = cardView.findViewById(R.id.cardView4);
-                }
-                else{
-                    cardImage = cardView.findViewById(R.id.cardView5);
-                }
-                cardImage.setImageResource(item.imageSource);
-                cardView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        final Dialog dialog = new Dialog(context);
-                        dialog.setContentView(R.layout.view_clothing_info);
-                        Button doneButton = dialog.findViewById(R.id.doneButton);
-                        TextView typeView = dialog.findViewById(R.id.viewType);
-                        TextView colorView = dialog.findViewById(R.id.viewColor);
-                        TextView warmthView = dialog.findViewById(R.id.viewWarmth);
-                        TextView formalityView = dialog.findViewById(R.id.viewFormality);
-                        TextView patternView = dialog.findViewById(R.id.viewPattern);
-
-                        typeView.setText(item.itemType);
-                        colorView.setText(item.itemColor);
-                        if(item.articleType.equals("accessory")){
-                            warmthView.setText("N/A");
-                            formalityView.setText("N/A");
-                        }
-                        else{
-                            warmthView.setText(item.temperature);
-                            formalityView.setText(item.formality);
-                        }
-                        patternView.setText(item.pattern);
-                        ImageView img = dialog.findViewById(R.id.image);
-                        img.setImageResource(item.imageSource);
-                        doneButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                dialog.dismiss();
-                            }
-                        });
-                        Button editButton = dialog.findViewById(R.id.editButton);
-                        editButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent intent = new Intent(context, EditClothingInfo.class);
-                                intent.putExtra("item", item);
-                                intent.putExtra("itemIndex", finali);
-                                context.startActivity(intent);
-                                updateCards(gridLayout, finalFilter);
-                                dialog.dismiss();
-                            }
-                        });
-                        dialog.show();
-                    }
-                });
+        for(int i = 0; i < displayItems.size(); i++){
+            final int finali = i;
+            final ClosetItem item = displayItems.get(i);
+            CardView cardView=(CardView)gridLayout.getChildAt(i);
+            ImageView cardImage;
+            if(i==0){
+                cardImage = cardView.findViewById(R.id.cardView0);
+            }
+            else if(i==1){
+                cardImage = cardView.findViewById(R.id.cardView1);
+            }
+            else if(i==2){
+                cardImage = cardView.findViewById(R.id.cardView2);
+            }
+            else if(i==3){
+                cardImage = cardView.findViewById(R.id.cardView3);
+            }
+            else if(i==4){
+                cardImage = cardView.findViewById(R.id.cardView4);
+            }
+            else if (i==5){
+                cardImage = cardView.findViewById(R.id.cardView5);
             }
             else{
                 return;
             }
+            cardImage.setImageResource(item.imageSource);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final Dialog dialog = new Dialog(context);
+                    dialog.setContentView(R.layout.view_clothing_info);
+                    Button doneButton = dialog.findViewById(R.id.doneButton);
+                    TextView typeView = dialog.findViewById(R.id.viewType);
+                    TextView colorView = dialog.findViewById(R.id.viewColor);
+                    TextView warmthView = dialog.findViewById(R.id.viewWarmth);
+                    TextView formalityView = dialog.findViewById(R.id.viewFormality);
+                    TextView patternView = dialog.findViewById(R.id.viewPattern);
 
+                    typeView.setText(item.itemType);
+                    colorView.setText(item.itemColor);
+                    if(item.articleType.equals("accessory")){
+                        warmthView.setText("N/A");
+                        formalityView.setText("N/A");
+                    }
+                    else{
+                        warmthView.setText(item.temperature);
+                        formalityView.setText(item.formality);
+                    }
+                    patternView.setText(item.pattern);
+                    ImageView img = dialog.findViewById(R.id.image);
+                    img.setImageResource(item.imageSource);
+                    doneButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+                    Button editButton = dialog.findViewById(R.id.editButton);
+                    editButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(context, EditClothingInfo.class);
+                            intent.putExtra("item", item);
+                            intent.putExtra("itemIndex", finali);
+                            context.startActivity(intent);
+                            updateCards(gridLayout, finalFilter);
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                }
+            });
         }
 
     }
-}
+    public void clearView(){
+        for(int i = 0; i < 6; i++){
+            CardView cardView=(CardView)gridLayout.getChildAt(i);
+            ImageView cardImage;
+            if(i==0){
+                cardImage = cardView.findViewById(R.id.cardView0);
+            }
+            else if(i==1){
+                cardImage = cardView.findViewById(R.id.cardView1);
+            }
+            else if(i==2){
+                cardImage = cardView.findViewById(R.id.cardView2);
+            }
+            else if(i==3){
+                cardImage = cardView.findViewById(R.id.cardView3);
+            }
+            else if(i==4){
+                cardImage = cardView.findViewById(R.id.cardView4);
+            }
+            else if(i == 5){
+                cardImage = cardView.findViewById(R.id.cardView5);
+            }
+            else{
+                return;
+            }
+            cardImage.setImageResource(R.drawable.white);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    return;
+                }
+            });
 
+        }
+    }
+}

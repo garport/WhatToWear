@@ -6,6 +6,9 @@ public final class ClosetList {
     private ClosetList(){
 
     }
+    public String bio = null;
+    public String profilename = null;
+    public String age = null;
     public static ClosetList getInstance(){
         return SELF;
     }
@@ -16,7 +19,7 @@ public final class ClosetList {
     public ArrayList<ClosetItem> getTops(){
         ArrayList<ClosetItem> tops = new ArrayList<>();
         for(int i = 0; i < this.getItems().size(); i++){
-            if(this.getItems().get(i).itemType.equals("top")){
+            if(this.getItems().get(i).articleType.equals("top")){
                 tops.add(this.getItems().get(i));
             }
         }
@@ -25,7 +28,7 @@ public final class ClosetList {
     public ArrayList<ClosetItem> getBottoms(){
         ArrayList<ClosetItem> bottoms = new ArrayList<>();
         for(int i = 0; i < this.getItems().size(); i++){
-            if(this.getItems().get(i).itemType.equals("bottom")){
+            if(this.getItems().get(i).articleType.equals("bottom")){
                 bottoms.add(this.getItems().get(i));
             }
         }
@@ -34,7 +37,7 @@ public final class ClosetList {
     public ArrayList<ClosetItem> getShoes(){
         ArrayList<ClosetItem> shoes = new ArrayList<>();
         for(int i = 0; i < this.getItems().size(); i++){
-            if(this.getItems().get(i).itemType.equals("shoes")){
+            if(this.getItems().get(i).articleType.equals("shoes")){
                 shoes.add(this.getItems().get(i));
             }
         }
@@ -43,7 +46,7 @@ public final class ClosetList {
     public ArrayList<ClosetItem> getOuterwear(){
         ArrayList<ClosetItem> outerwear = new ArrayList<>();
         for(int i = 0; i < this.getItems().size(); i++){
-            if(this.getItems().get(i).itemType.equals("outerwear")){
+            if(this.getItems().get(i).articleType.equals("outerwear")){
                 outerwear.add(this.getItems().get(i));
             }
         }
@@ -53,7 +56,7 @@ public final class ClosetList {
     public ArrayList<ClosetItem> getAccessories(){
         ArrayList<ClosetItem> accessories = new ArrayList<>();
         for(int i = 0; i < this.getItems().size(); i++){
-            if(this.getItems().get(i).itemType.equals("accessory")){
+            if(this.getItems().get(i).articleType.equals("accessory")){
                 accessories.add(this.getItems().get(i));
             }
         }

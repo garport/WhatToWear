@@ -26,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shirt1" />
+        app:srcCompat="@drawable/jacketwarm" />
 
     <Button
         android:id="@+id/prevtop"

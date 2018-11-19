@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class CustomizeActivity extends AppCompatActivity {
     static int top = 3;
-    static int bottom = 1;
+    static int bottom = 0;
     static int shoes = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class CustomizeActivity extends AppCompatActivity {
         switch (top){
             case -1:
                 top = 6;
+                customTop.setImageResource(R.drawable.shirt2);
+
                 break;
             case 0:
                 customTop.setImageResource(R.drawable.jacket2);
@@ -41,7 +43,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customTop.setImageResource(R.drawable.shirt1);
                 break;
             case 4:
-                customTop.setImageResource(R.drawable.shirt2);
+                customTop.setImageResource(R.drawable.jacketwarm);
                 break;
             case 5:
                 customTop.setImageResource(R.drawable.shirt4);
@@ -49,9 +51,14 @@ public class CustomizeActivity extends AppCompatActivity {
             case 6:
                 customTop.setImageResource(R.drawable.shirt3);
                 break;
+
             case 7:
-                top = 0;
+                customTop.setImageResource(R.drawable.shirt2);
                 break;
+            case 8:
+                top = 0;
+                customTop.setImageResource(R.drawable.jacket2);
+
         }
     }
 
@@ -60,7 +67,9 @@ public class CustomizeActivity extends AppCompatActivity {
         top--;
         switch (top){
             case -1:
-                top = 0;
+                top = 6;
+                customTop.setImageResource(R.drawable.shirt2);
+
                 break;
             case 0:
                 customTop.setImageResource(R.drawable.jacket2);
@@ -75,7 +84,7 @@ public class CustomizeActivity extends AppCompatActivity {
                 customTop.setImageResource(R.drawable.shirt1);
                 break;
             case 4:
-                customTop.setImageResource(R.drawable.shirt2);
+                customTop.setImageResource(R.drawable.jacketwarm);
                 break;
             case 5:
                 customTop.setImageResource(R.drawable.shirt4);
@@ -83,9 +92,14 @@ public class CustomizeActivity extends AppCompatActivity {
             case 6:
                 customTop.setImageResource(R.drawable.shirt3);
                 break;
+
             case 7:
-                top = 0;
+                customTop.setImageResource(R.drawable.shirt2);
                 break;
+            case 8:
+                top = 0;
+                customTop.setImageResource(R.drawable.jacket2);
+
         }
     }
 
@@ -95,15 +109,21 @@ public class CustomizeActivity extends AppCompatActivity {
         switch (bottom){
             case -1:
                 bottom = 1;
+                customBottom.setImageResource(R.drawable.pants1);
+
                 break;
             case 0:
-                customBottom.setImageResource(R.drawable.pants1);
+                customBottom.setImageResource(R.drawable.pants2);
+
                 break;
             case 1:
-                customBottom.setImageResource(R.drawable.pants2);
+                customBottom.setImageResource(R.drawable.pants1);
+
                 break;
 
             case 2:
+                customBottom.setImageResource(R.drawable.pants2);
+
                 bottom = 0;
                 break;
         }
@@ -115,14 +135,21 @@ public class CustomizeActivity extends AppCompatActivity {
         switch (bottom){
             case -1:
                 bottom = 1;
+                customBottom.setImageResource(R.drawable.pants1);
+
                 break;
             case 0:
-                customBottom.setImageResource(R.drawable.pants1);
+                customBottom.setImageResource(R.drawable.pants2);
+
                 break;
             case 1:
-                customBottom.setImageResource(R.drawable.pants2);
+                customBottom.setImageResource(R.drawable.pants1);
+
                 break;
+
             case 2:
+                customBottom.setImageResource(R.drawable.pants2);
+
                 bottom = 0;
                 break;
         }
@@ -132,6 +159,8 @@ public class CustomizeActivity extends AppCompatActivity {
         shoes++;
         switch(shoes){
             case -1:
+                customShoes.setImageResource(R.drawable.shoes4);
+
                 shoes = 3;
                 break;
             case 0:
@@ -147,6 +176,8 @@ public class CustomizeActivity extends AppCompatActivity {
                 customShoes.setImageResource(R.drawable.shoes4);
                 break;
             case 4:
+                customShoes.setImageResource(R.drawable.shoes2);
+
                 shoes = 0;
                 break;
         }
@@ -156,6 +187,8 @@ public class CustomizeActivity extends AppCompatActivity {
         shoes--;
         switch(shoes){
             case -1:
+                customShoes.setImageResource(R.drawable.shoes4);
+
                 shoes = 3;
                 break;
             case 0:
@@ -171,6 +204,8 @@ public class CustomizeActivity extends AppCompatActivity {
                 customShoes.setImageResource(R.drawable.shoes4);
                 break;
             case 4:
+                customShoes.setImageResource(R.drawable.shoes2);
+
                 shoes = 0;
                 break;
         }
