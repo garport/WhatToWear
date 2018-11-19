@@ -56,12 +56,13 @@ public class MainActivity extends AppCompatActivity
         LinearLayout gallery = findViewById(R.id.gallery);
 
         LayoutInflater galInflater = LayoutInflater.from(this);
+
         for(int i = 0; i < 1; i++ ){
 
             View view = galInflater.inflate(R.layout.item,gallery,false);
 
             ImageView imageview = view.findViewById(R.id.imageView3);
-            imageview.setImageResource(R.drawable.outfitcold);
+            imageview.setImageResource(R.drawable.outfit1);
 
             gallery.addView(view);
         }
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity
             View view = galInflater.inflate(R.layout.item,gallery,false);
 
             ImageView imageview = view.findViewById(R.id.imageView3);
-            imageview.setImageResource(R.drawable.outfit1);
+            imageview.setImageResource(R.drawable.outfitcold);
 
             gallery.addView(view);
         }
